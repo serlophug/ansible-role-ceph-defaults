@@ -18,7 +18,7 @@
   command: "{{ docker_exec_cmd }} ceph --connect-timeout 3 --cluster {{ cluster }} fsid"
   changed_when: false
   failed_when: false
-  check_mode: no
+  always_run: yes
   register: ceph_current_fsid
   delegate_to: "{{ groups[mon_group_name][0] }}"
   when:
@@ -82,7 +82,7 @@
   changed_when: false
   register: cluster_uuid
   become: false
-  check_mode: no
+  always_run: true
   when:
     - generate_fsid
 
