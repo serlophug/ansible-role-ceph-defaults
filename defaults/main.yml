@@ -70,14 +70,24 @@ debian_package_dependencies:
   - hdparm
 
 centos_package_dependencies:
-  - python-pycurl
   - hdparm
   - epel-release
   - python-setuptools
   - libselinux-python
+  - python-pip
 
+centos_package_dependencies_pip:
+  - requests
+  - pycurl
+  - setuptools
+  
+redhat_package_dependencies_pip:
+  - requests
+  - pycurl
+  - setuptools
+  
 redhat_package_dependencies:
-  - python-pycurl
+  - python-pip
   - hdparm
   - python-setuptools
 
